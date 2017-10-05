@@ -3,7 +3,8 @@
 	$Naam = "Bosschem";
 	$Voornaam = "Indy";
 
-    $Mail = "indy.bosschem@student.kdg.be"
+    /* mail: indy.bosschem@student.kdg.be
+    naam: indy bosschem*/
 ?>
 
     <!doctype html>
@@ -26,9 +27,6 @@
             <ul>
                 <li>
                     <?php echo $Voornaam . " " . $Naam ?>
-                </li>
-                <li>
-                    <?php echo $Mail ?>
                 </li>
             </ul>
 
