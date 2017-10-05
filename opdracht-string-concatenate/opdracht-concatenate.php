@@ -21,7 +21,7 @@
 
         <section class="body">
 
-            <h1>Commentaar:</h1>
+            <h1>Opdracht:</h1>
             <ul>
                 <li>
                     <?php echo $volledigeNaam ?>
