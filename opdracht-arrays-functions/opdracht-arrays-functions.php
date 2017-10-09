@@ -3,6 +3,14 @@
     $dieren = array('kat' , 'hond' , 'vis' , 'paard' , 'varken' , 'vogel' , 'gazelle' , 'wolf' , 'koala' , 'vos');
     $count = count($dieren);
     $teZoekenDier = "wolf";
+    $gesorteerd = $dieren;
+    sort($gesorteerd);
+    $zoogdieren = array('wolf', 'varken', 'aap');
+    $dierenLijst = array_merge($dieren, $zoogdieren);
+    $getallen = array(8, 7, 8, 7, 3, 2, 1, 2, 4);
+    $uniek = array_unique($getallen);
+    $gesorteerdeGetallen = $uniek;
+    rsort($gesorteerdeGetallen);
         
     if (in_array($teZoekenDier, $dieren)) 
     {
@@ -47,24 +55,26 @@
             <h1 class="extra">Opdracht array functies: deel 2</h1>
 
             <ul>
-                <li>Ga verder op deel 1 (maar maak een aparte kopie voor, overschrijf het origineel niet!)</li>
+                <li>
+                    <?php echo var_dump($gesorteerd) ?>
+                </li>
 
-                <li>Zorg ervoor dat de array volgens het alfabet gesorteerd wordt ( A -> Z )</li>
-
-                <li>Maak een array <code>$zoogdieren</code> en plaats hier 3 dieren in, voeg vervolgens de 2 arrays met dieren samen in de array <code>$dierenLijst</code></li>
+                <li>
+                    <?php echo var_dump($dierenLijst) ?>
+                </li>
             </ul>
 
 
             <h1 class="extra">Opdracht array functies: deel 3</h1>
 
             <ul>
-                <li>Maak een array met volgende waarden:
-                    <p>8, 7, 8, 7, 3, 2, 1, 2, 4</p>
+                <li>
+                    <?php echo var_dump($uniek) ?>
                 </li>
 
-                <li>Haal de duplicaten uit de array</li>
-
-                <li>Sorteer de array van groot naar klein</li>
+                <li>
+                    <?php echo var_dump($gesorteerdeGetallen) ?>
+                </li>
 
             </ul>
 
