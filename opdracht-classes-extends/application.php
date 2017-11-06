@@ -48,24 +48,15 @@ spl_autoload_register(function ($class_name) {
 
 
         <h1>Instanties van de Lion class</h1>
-        <p>
-            <?php echo "De speciale move van {$simba->getName()} (soort: {$simba->getSpecies()}): {$simba->doSpecialMove()}" ?>
-        </p>
-
-        <p>
-            <?php echo "De speciale move van {$scar->getName()} (soort: {$scar->getSpecies()}): {$scar->doSpecialMove()}" ?>
-        </p>
-
-
-
         <h1>Instanties van de Zebra class</h1>
-        <p>
-            <?php echo "De speciale move van {$zeke->getName()} (soort: {$zeke->getSpecies()}): {$zeke->doSpecialMove()}" ?>
-        </p>
+        <?php echo "<p>De speciale move van {$simba->getName()} (soort: {$simba->getSpecies()}): {$simba->doSpecialMove()}</p>"
+                   "<p>De speciale move van {$scar->getName()} (soort: {$scar->getSpecies()}): {$scar->doSpecialMove()}</p>" ?>
 
-        <p>
-            <?php echo "De speciale move van {$zana->getName()} (soort: {$zana->getSpecies()}): {$zana->doSpecialMove()}" ?>
-        </p>
+
+
+            <h1>Instanties van de Zebra class</h1>
+            <?php echo "<p>De speciale move van {$zeke->getName()} (soort: {$zeke->getSpecies()}): {$zeke->doSpecialMove()}</p>"
+                       "<p>De speciale move van {$zana->getName()} (soort: {$zana->getSpecies()}): {$zana->doSpecialMove()}</p>" ?>
 
 
 
