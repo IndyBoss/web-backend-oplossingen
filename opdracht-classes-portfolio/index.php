@@ -1,13 +1,11 @@
 <?php
 
-	function __autoload($className)
-	{
-		include_once 'classes/' . $className . '-class.php'; 
-	}
-
-	$body 	= (isset( $_GET['page'] ) ? $_GET['page'] : 'index') . '-body.html';
+    function __autoload($classname) 
+    {
+        $filename = 'classes/' . $classname . '-class.php';
+        include_once($filename);
+    }
 	
-	$page	=	new HTMLbuilder('header.html', $body, 'footer.html');
-
+	$page = new HTMLbuilder('header.partial.php', 'body.partial.php', 'footer.partial.php');
 
 ?>

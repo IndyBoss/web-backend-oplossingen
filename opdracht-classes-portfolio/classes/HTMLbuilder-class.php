@@ -12,18 +12,14 @@
 			$this->body		=	$body;
 			$this->footer	=	$footer;
 			
-			// Creëer pagina automatisch
 			$this->buildPage();
 		}
 		
 		public function buildHeader()
 		{
-			// Get css files
-			$cssDir	=	 dirname(dirname(__FILE__)) . '/css/';
-			$filesArray	=	$this->findFiles($cssDir, 'css');
-			
+			$filesArray	=	$this->findFiles('css', 'css');
 			$cssLinks	=	$this->createCssLink($filesArray);
-		
+            
 			include 'html/'. $this->header;
 		}	
 		
@@ -34,10 +30,7 @@
 		
 		public function buildFooter()
 		{
-			// Get JS-files
-			$jsDir	=	 dirname(dirname(__FILE__)) . '/js/';
-			$filesArray	=	$this->findFiles($jsDir, 'js');
-			
+			$filesArray	=	$this->findFiles('js', 'js');
 			$jsScripts	=	$this->createJsScripts($filesArray);
 			
 			include 'html/'. $this->footer;
@@ -52,39 +45,29 @@
 		
 		public function findFiles($dir, $file)
 		{
-			
-			return glob($dir . '/*.' . $file);	
+			$Files = glob($dir . '/*.' . $file);
+			return $Files;
 		}
 		
 		public function createCssLink($filesArray)
 		{
-			$dumpArray	=	array();
-			
 			foreach ($filesArray as $file)
 			{
-				$fileInfo	=	pathinfo($file);
-				$fileName	=	$fileInfo['basename'];
-				
-				$dumpArray[] = '<link rel="stylesheet" type="text/css" href="css/' . $fileName . '">';
+                $link = '<link rel="stylesheet" type="text/css" href="'.$file.'">';
+                echo $link;
 			}
-			
-			return implode('', $dumpArray);
 		}
 		
 		public function createJsScripts($filesArray)
 		{
-			$dumpArray	=	array();
-			
 			foreach ($filesArray as $file)
 			{
-				$fileInfo	=	pathinfo($file);
-				$fileName	=	$fileInfo['basename'];
-				
-				$dumpArray[] = '<script src="js/' . $fileName . '"></script>';
-			}
-			
-			return implode('', $dumpArray);
+                $script = '<script src="' . $file . '"></script>';
+                echo $script;
+			}	
 		}
+        
+        
 	}
 
 
